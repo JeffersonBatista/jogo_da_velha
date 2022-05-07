@@ -1,5 +1,8 @@
 var jogador = null;
+var vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
+var vencedorSelecionado = document.getElementById('vencedor-selecionado');
+
 mudarJogador('X');
 
 function escolherQuadrado(id){
@@ -17,9 +20,14 @@ function escolherQuadrado(id){
         jogador = 'X'
     }
     mudarJogador(jogador);
+    checarVencedor();
 }
 
 function mudarJogador(valor){
     jogador = valor;
     jogadorSelecionado.innerHTML = jogador;
+}
+
+function checarVencedor(){
+
 }
