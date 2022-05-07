@@ -2,7 +2,7 @@ var jogador = null;
 var vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
-var quadrado = document.getElementsByClassName('quadrado');
+var quadrados = document.getElementsByClassName('quadrado');
 mudarJogador('X');
 
 function escolherQuadrado(id){
@@ -42,6 +42,41 @@ function checarVencedor(){
     if(checarSequencia(quadrado1, quadrado2, quadrado3)){
         mudarCorQuadrado(quadrado1, quadrado2, quadrado3);
         mudarVencedor(quadrado1);
+        return;
+    }
+    if(checarSequencia(quadrado4, quadrado5, quadrado6)){
+        mudarCorQuadrado(quadrado4, quadrado5, quadrado6);
+        mudarVencedor(quadrado4);
+        return;
+    }
+    if(checarSequencia(quadrado7, quadrado8, quadrado9)){
+        mudarCorQuadrado(quadrado7, quadrado8, quadrado9);
+        mudarVencedor(quadrado7);
+        return;
+    }
+    if(checarSequencia(quadrado1, quadrado4, quadrado7)){
+        mudarCorQuadrado(quadrado1, quadrado4, quadrado7);
+        mudarVencedor(quadrado1);
+        return;
+    }
+    if(checarSequencia(quadrado2, quadrado5, quadrado8)){
+        mudarCorQuadrado(quadrado2, quadrado5, quadrado8);
+        mudarVencedor(quadrado2);
+        return;
+    }
+    if(checarSequencia(quadrado3, quadrado6, quadrado9)){
+        mudarCorQuadrado(quadrado3, quadrado6, quadrado9);
+        mudarVencedor(quadrado3);
+        return;
+    }
+    if(checarSequencia(quadrado1, quadrado5, quadrado9)){
+        mudarCorQuadrado(quadrado1, quadrado5, quadrado9);
+        mudarVencedor(quadrado1);
+        return;
+    }
+    if(checarSequencia(quadrado3, quadrado5, quadrado7)){
+        mudarCorQuadrado(quadrado3, quadrado5, quadrado7);
+        mudarVencedor(quadrado3);
     }
 }
 
@@ -51,9 +86,9 @@ function mudarVencedor(quadrado){
 }
 
 function mudarCorQuadrado(quadrado1, quadrado2, quadrado3){
-    quadrado1.style.color = 'red';
-    quadrado2.style.color = 'red';
-    quadrado3.style.color = 'red';
+    quadrado1.style.background = 'limegreen';
+    quadrado2.style.background = 'limegreen';
+    quadrado3.style.background = 'limegreen';
 }
 
 function checarSequencia(quadrado1, quadrado2, quadrado3){
