@@ -2,7 +2,7 @@ var jogador = null;
 var vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
-
+var quadrado = document.getElementsByClassName('quadrado');
 mudarJogador('X');
 
 function escolherQuadrado(id){
@@ -39,4 +39,27 @@ function checarVencedor(){
     var quadrado8 = document.getElementById(8);
     var quadrado9 = document.getElementById(9);
 
+    if(checarSequencia(quadrado1, quadrado2, quadrado3)){
+        mudarCorQuadrado(quadrado1, quadrado2, quadrado3);
+        mudarVencedor(quadrado1);
+    }
+}
+
+function mudarVencedor(quadrado){
+    vencedor = quadrado.innerHTML;
+    vencedorSelecionado.innerHTML = vencedor;
+}
+
+function mudarCorQuadrado(quadrado1, quadrado2, quadrado3){
+    quadrado1.style.color = 'red';
+    quadrado2.style.color = 'red';
+    quadrado3.style.color = 'red';
+}
+
+function checarSequencia(quadrado1, quadrado2, quadrado3){
+    var igual = false;
+    if(quadrado1.innerHTML !== '-' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3.innerHTML){
+        igual = true;
+    }
+    return igual;
 }
