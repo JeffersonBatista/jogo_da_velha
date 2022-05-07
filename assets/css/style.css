@@ -3,7 +3,9 @@ body {
 }
 
 footer {
-    text-align: center;
+    text-align:center;
+    color: blueviolet;
+    font-weight: bold;
 }
 
 .quadrado {
