@@ -8,6 +8,9 @@ mudarJogador('X');
 function escolherQuadrado(id){
     // Teste para verificar o click - console.log(id);
     console.log(id);
+    if (vencedor !== null){
+        return;
+    }
     var quadrado = document.getElementById(id);
     if(quadrado.innerHTML !== '-'){
         return;
@@ -97,4 +100,16 @@ function checarSequencia(quadrado1, quadrado2, quadrado3){
         igual = true;
     }
     return igual;
+}
+
+function reiniciar(){
+    vencedor = null;
+    vencedorSelecionado.innerHTML = '';
+    for(var i=1; i<=9; i++){
+        var quadrado = document.getElementById(i);
+        quadrado.style.background = 'black';
+        quadrado.style.color = 'black';
+        quadrado.innerHTML = "-"
+    }
+    mudarJogador('X');
 }
